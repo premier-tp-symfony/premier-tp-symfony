@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +19,15 @@ class ProductType extends AbstractType
             ->add('price', MoneyType::class, [
                 'divisor' => 100
             ])
-            ->add('category')
+            ->add('category', ChoiceType::class,[
+                'choices'   => array(
+                    'categorie 1'   => 'categorie 1',
+                    'categorie 2' => 'categorie 2',
+                    'categorie 3'   => 'categorie 3',
+                    'categorie 4'   => 'categorie 4',
+                    'categorie 5'   => 'categorie 5',
+                ),
+            ])
         ;
     }
 

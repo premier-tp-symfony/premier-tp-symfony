@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Form\ProductType;
+use App\Repository\ProductRepository;
 use Cocur\Slugify\SlugifyInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,12 +14,32 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/product", name="product")
+     *
+     * @Route("/product", name="product_list")
+     * @param ProductRepository $repository
+     * @return Response
      */
-    public function index()
+    public function list(ProductRepository $repository)
     {
-        return $this->render('product/index.html.twig');
+        $products = $repository->findAll();
+
+        return $this->render('product/list.html.twig', [
+            'products' => $products
+        ]);
     }
+
+    /**
+     * @Route("/product/{id}", name="product_show")
+     * @param Product $product
+     * @return Response
+     */
+    public function show(Product $product)
+    {
+        return $this->render('product/show.html.twig', [
+            'product' => $product
+        ]);
+    }
+
 
     /**
      * @Route("/product/create", name="product_create")
