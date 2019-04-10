@@ -44,6 +44,7 @@ class Product
     /**
      * @Assert\NotBlank()
      * @ORM\Column(type="string", length=255)
+     * @Assert\Choice({"categorie 1","categorie 2","categorie 3","categorie 4","categorie 5",})
      */
     private $category;
 
