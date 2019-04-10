@@ -31,7 +31,7 @@ class AppFixtures extends Fixture
             $product->setName($faker->randomElement([
                 'Produit 1', 'Produit 2', 'Produit 3', 'Produit 4', 'Produit 5'
             ]));
-            $product->setName($faker->randomElement([
+            $product->setCategory($faker->randomElement([
                 'categorie 1', 'categorie 2', 'categorie 3', 'categorie 4', 'categorie 5'
             ]));
             $product->setDescription($faker->text(300));
