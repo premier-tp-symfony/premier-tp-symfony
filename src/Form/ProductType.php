@@ -22,7 +22,7 @@ class ProductType extends AbstractType
             ->add('category', ChoiceType::class,[
                 'choices'   => array(
                     'categorie 1'   => 'categorie 1',
-                    'categorie 2' => 'categorie 2',
+                    'categorie 2' =>   'categorie 2',
                     'categorie 3'   => 'categorie 3',
                     'categorie 4'   => 'categorie 4',
                     'categorie 5'   => 'categorie 5',
