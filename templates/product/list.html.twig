@@ -3,6 +3,7 @@
 {% block title %}Liste des produits - {{ parent() }}{% endblock %}
 
 {% block body %}
+<div class="container my-5">
 
     <div class="row">
         {% for product in products %}
@@ -15,4 +16,5 @@
             </div>
         {% endfor %}
     </div>
+</div>
 {% endblock %}
