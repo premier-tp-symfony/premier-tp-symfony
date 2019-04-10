@@ -19,6 +19,25 @@
         </ol>
     </nav>
 </div>
+
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {# form_widget(form) #}
+    <div class="row">
+        <div class="col-6">
+            {{ form_label(form.name, 'Votre nom') }}
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(form.email) }}
+        </div>
+    </div>
+
+    {{ form_rest(form) }}
+
+    <button class="btn btn-primary btn-block">Envoyer</button>
+    {{ form_end(form) }}
+
 {% endblock %}
 
 
