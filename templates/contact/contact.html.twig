@@ -19,6 +19,33 @@
         </ol>
     </nav>
 </div>
+
+<div class="container" id="formulaire">
+    <nav class="navbar navbar" id="nav">
+  <span class="navbar-text">
+      <i class="fa fa-envelope"></i>
+    Contactez-nous
+  </span>
+    </nav>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {# form_widget(form) #}
+    <div class="row">
+        <div class="col-12">
+            {{ form_label(form.name, 'Votre nom') }}
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="col-12">
+            {{ form_row(form.email) }}
+        </div>
+    </div>
+
+    {{ form_rest(form) }}
+
+    <button class="btn btn-primary btn-block">Envoyer</button>
+    {{ form_end(form) }}
+
+</div>
 {% endblock %}
 
 

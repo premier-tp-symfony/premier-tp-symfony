@@ -1,0 +1,13 @@
+#formulaire{
+    width: 560px;
+    margin-left: 120px ;
+}
+
+.row{
+    display: block;
+}
+
+#nav{
+    background-color: royalblue;
+    color: #FFFFFF;
+}
