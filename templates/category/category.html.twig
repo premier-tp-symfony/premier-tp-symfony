@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Catégories</h1>
+            <p class="lead text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sit, nostrum, a, eligendi soluta earum animi perspiciatis maxime deserunt ducimus minus hic ab aliquam odit recusandae iure provident quaerat consequatur.</p>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="category.html">Catégorie</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Sous catégorie</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Catégories</div>
+                    <ul class="list-group category_block">
+                        <li class="list-group-item"><a href="category.html">Cras justo odio</a></li>
+                        <li class="list-group-item"><a href="category.html">Dapibus ac facilisis in</a></li>
+                        <li class="list-group-item"><a href="category.html">Morbi leo risus</a></li>
+                        <li class="list-group-item"><a href="category.html">Porta ac consectetur ac</a></li>
+                        <li class="list-group-item"><a href="category.html">Vestibulum at eros</a></li>
+                    </ul>
+                </div>
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-success text-white text-uppercase">Dernier produit</div>
+                    <div class="card-body">
+                        <img class="img-fluid" src="{{ lastProduct.image }}" />
+                        <h5 class="card-title">{{ lastProduct.name }}</h5>
+                        <p class="card-text">{{ lastProduct.description }}</p>
+                        <p class="bloc_left_price">{{ lastProduct.price / 100 }} &euro;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+			     {% for product in products %}
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="product.html" title="View Product">{{ product.name }}</a></h4>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="btn btn-danger btn-block">{{ product.price / 100 }} &euro;</p>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#" class="btn btn-success btn-block">Ajouter au panier</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+				{% endfor %}
+                    <div class="col-12">
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Précédent</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">{{ page-1 }}</a></li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">{{ page }}</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">{{ page+1 }}</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Suivant</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    
