@@ -36,6 +36,9 @@ class AppFixtures extends Fixture
             ]));
             $product->setDescription($faker->text(300));
             $product->setPrice($faker->randomNumber(5) * 100);
+            $product->setImage($faker->randomElement([
+                'product_image1.jpg', 'product_image2.jpg', 'product_image3.jpg', 'product_image4.jpg', 'product_image5.jpg'
+            ]));
             // Je génère un slug
             // $this->slugify->slugify('iPhone X'); // iphone-x
             $slug = $this->slugify->slugify($product->getName());
