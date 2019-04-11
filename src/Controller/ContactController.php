@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 
+use App\Entity\Contacts;
 use App\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,14 +16,9 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index()
-    {
-        return $this->render('contact/contact.html.twig');
-    }
-
     public function form (Request $request, \Swift_Mailer $mailer)
     {
-        $contact = new Contact();
+        $contact = new Contacts();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
