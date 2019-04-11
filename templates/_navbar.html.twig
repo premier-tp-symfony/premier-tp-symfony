@@ -8,19 +8,19 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             {% set route = app.request.attributes.get('_route') %}
             <ul class="navbar-nav m-auto">
-                <li class="nav-item active">
+                <li class="nav-item {{ route == 'home' ? 'active' }}">
                     <a class="nav-link" href="{{ path('home') }}">Accueil</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ route == 'categories' ? 'active' }}">
                     <a class="nav-link" href="{{ path('categories') }}">Categories</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ route == 'product_list' ? 'active' }}">
                     <a class="nav-link" href="{{ path('product_list') }}">Produit</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="panier.html">Panier</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ route == 'contact' ? 'active' }}">
                     <a class="nav-link" href="{{ path('contact') }}">Contact</a>
                 </li>
             </ul>
