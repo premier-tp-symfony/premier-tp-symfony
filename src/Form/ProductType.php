@@ -28,6 +28,7 @@ class ProductType extends AbstractType
                     'categorie 5'   => 'categorie 5',
                 ),
             ])
+            ->add('image')
         ;
     }
 
